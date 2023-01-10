@@ -46,6 +46,12 @@
 *.mod*
 *.cmd
 .tmp_versions/
+# Selo
+*.out
+*.o
+*.a
+.DS_Store
+
 modules.order
 Module.symvers
 Mkfile.old
