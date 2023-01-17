@@ -1,8 +1,6 @@
-#include <unistd.h>
-#include <stdarg.h>
-#include "libft/libft.h"
+#include "libftprintf.h"
 
-void	func(char *set, ...)
+/* void	func(char *set, ...)
 {
 	va_list arg;
 	va_start(arg, set);
@@ -11,11 +9,14 @@ void	func(char *set, ...)
 	int it = va_arg(arg, int);
 	write(1, &it, 1);
 	va_end(arg);
-}
+} */
 
 
 int main()
 {
-	//char hello[] = "hella";
-	func("hello", "fdks", 's');
+	int i=0;
+	char c[] = "ismin";
+	while(c[i])
+	write(1, &c[i++], 1);
+	//func("hello", "fdks", 's');
 }

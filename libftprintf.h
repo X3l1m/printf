@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   libftprintf.h                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/16 15:27:01 by seyildir      #+#    #+#                 */
-/*   Updated: 2022/12/02 19:50:46 by seyildir      ########   odam.nl         */
+/*   Created: 2023/01/17 16:22:03 by seyildir      #+#    #+#                 */
+/*   Updated: 2023/01/17 18:40:14 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_P_H
+# define LIBFT_P_H
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	i;
+# include <stdarg.h>
+# include <stdlib.h>
+# include <string.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <ctype.h>
 
-	i = 0;
-	while (i < len)
-		*(unsigned char *)(b + i++) = (unsigned char)c;
-	return (b);
-}
+int ft_printf(const char *typef, ...);
+int	flg_char(va_list arg);
+int	flg_string(va_list arg);
 
-/* #include <stdio.h>
-int main()
-{
-	char b[] = "ff";
-	int c = 'a';
-	printf("%s", ft_memset(b, c, 2));
-} */
+#endif

@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_bzero.c                                         :+:    :+:            */
+/*   flg_char.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/29 18:36:19 by seyildir      #+#    #+#                 */
-/*   Updated: 2022/11/30 15:54:47 by seyildir      ########   odam.nl         */
+/*   Created: 2023/01/17 17:58:18 by seyildir      #+#    #+#                 */
+/*   Updated: 2023/01/17 18:36:32 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libftprintf.h"
 
-void	ft_bzero(void *s, size_t n)
+int	flg_char(va_list arg)
 {
-	while (n-- > 0)
-		*(char *)(s + n) = 0;
+	char arg_c;
+	arg_c = va_arg(arg, int);
+	write(1, &arg_c, 1);
+	return(1);
 }
-
-/* int main()
-{
-	char d[]= "agamm";
-	ft_bzero(d, 3);
-	write(1, d, 7);
-} */
