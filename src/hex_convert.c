@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libftprintf.h                                      :+:    :+:            */
+/*   hex_convert.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/17 16:22:03 by seyildir      #+#    #+#                 */
-/*   Updated: 2023/01/17 18:40:14 by seyildir      ########   odam.nl         */
+/*   Created: 2023/01/18 19:56:19 by seyildir      #+#    #+#                 */
+/*   Updated: 2023/01/18 21:18:15 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_P_H
-# define LIBFT_P_H
+#include "../ft_printf.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <ctype.h>
+int	hex_convert(unsigned long int arg, char typef)
+{
+	int	i;
+	int	len;
 
-int ft_printf(const char *typef, ...);
-int	flg_char(va_list arg);
-int	flg_string(va_list arg);
-
-#endif
+	len = 0;
+	i = arg % 16;
+	if (arg >= 16)
+		len += hex_convert(arg / 16, typef);
+	if (i < 10)
+		i += 48;
+	else
+	{
+		if (typef == 'X')
+			i += 55;
+		else
+			i += 87;
+	}
+	len += write(1, &i, 1);
+	return (len);
+}

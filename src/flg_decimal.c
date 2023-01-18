@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   flg_char.c                                         :+:    :+:            */
+/*   flg_decimal.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/17 17:58:18 by seyildir      #+#    #+#                 */
-/*   Updated: 2023/01/18 21:07:17 by seyildir      ########   odam.nl         */
+/*   Created: 2023/01/18 18:15:21 by seyildir      #+#    #+#                 */
+/*   Updated: 2023/01/18 21:08:14 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	flg_char(va_list arg)
+int	flg_decimal(va_list arg)
 {
-	char	arg_c;
+	int	arg_dec;
+	int	len;
 
-	arg_c = va_arg(arg, int);
-	write(1, &arg_c, 1);
-	return (1);
+	len = 0;
+	arg_dec = va_arg(arg, int);
+	if (arg_dec == -2147483648)
+		return (write(1, "-2147483648", 11));
+	if (arg_dec < 0)
+	{
+		write(1, "-", 1);
+		arg_dec = -arg_dec;
+		len++;
+	}
+	len += dec_convert(arg_dec);
+	return (len);
 }

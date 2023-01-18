@@ -1,5 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: seyildir <seyildir@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2023/01/18 21:04:02 by seyildir      #+#    #+#                  #
+#    Updated: 2023/01/18 21:04:02 by seyildir      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 NAME 	= libftprintf.a
-HEADER 	= libftprintf.h
+HEADER 	= ft_printf.h
 
 CC 		= gcc
 CFLAGS	= -Wall -Wextra -Werror

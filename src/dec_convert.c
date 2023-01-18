@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   flg_char.c                                         :+:    :+:            */
+/*   dec_convert.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/17 17:58:18 by seyildir      #+#    #+#                 */
-/*   Updated: 2023/01/18 21:07:17 by seyildir      ########   odam.nl         */
+/*   Created: 2023/01/18 19:01:57 by seyildir      #+#    #+#                 */
+/*   Updated: 2023/01/18 21:02:32 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	flg_char(va_list arg)
+int	dec_convert(unsigned long int dec)
 {
-	char	arg_c;
+	unsigned long int	i;
+	int					len;
 
-	arg_c = va_arg(arg, int);
-	write(1, &arg_c, 1);
-	return (1);
+	len = 0;
+	i = dec % 10;
+	if (dec >= 10)
+		len += dec_convert(dec / 10);
+	i += 48;
+	len += write(1, &i, 1);
+	return (len);
 }

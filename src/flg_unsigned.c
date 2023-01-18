@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   flg_char.c                                         :+:    :+:            */
+/*   flg_unsigned.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/17 17:58:18 by seyildir      #+#    #+#                 */
-/*   Updated: 2023/01/18 21:07:17 by seyildir      ########   odam.nl         */
+/*   Created: 2023/01/18 21:10:31 by seyildir      #+#    #+#                 */
+/*   Updated: 2023/01/18 21:10:35 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	flg_char(va_list arg)
+int	flg_unsigned(va_list arg)
 {
-	char	arg_c;
+	unsigned int	arg_uns;
 
-	arg_c = va_arg(arg, int);
-	write(1, &arg_c, 1);
-	return (1);
+	arg_uns = va_arg(arg, unsigned int);
+	return (dec_convert(arg_uns));
 }
