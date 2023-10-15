@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include <ft_printf.h>
 
 int	dec_convert(unsigned long int dec)
 {

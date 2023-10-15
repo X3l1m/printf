@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include <ft_printf.h>
 
 int	flg_pointer(va_list arg)
 {

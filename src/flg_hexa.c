@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include <ft_printf.h>
 
 int	flg_hexa(va_list arg, char typef)
 {

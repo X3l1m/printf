@@ -23,12 +23,12 @@ int	ptf_percent(char typef, va_list arg)
 		len += flg_string(arg);
 	else if (typef == 'p')
 		len += flg_pointer(arg);
-	else if (typef == 'd' | typef == 'i')
+	else if (typef == 'd' || typef == 'i')
 		len += flg_decimal(arg);
 	else if (typef == 'u')
 		len += flg_unsigned(arg);
-	else if (typef == 'X' | typef == 'x')
-			len += flg_hexa(arg, typef);
+	else if (typef == 'X' || typef == 'x')
+		len += flg_hexa(arg, typef);
 	else if (typef == '%')
 		len += write(1, "%", 1);
 	return (len);

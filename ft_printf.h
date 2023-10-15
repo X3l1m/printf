@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdio.h>
 
 int	ft_printf(const char *typef, ...);
 int	flg_char(va_list arg);

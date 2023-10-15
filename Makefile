@@ -11,10 +11,9 @@
 # **************************************************************************** #
 
 NAME 	= libftprintf.a
-HEADER 	= ft_printf.h
 
 CC 		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -I./
 COMPILE	= $(CC) $(CFLAGS)
 
 RM		= rm -f
@@ -29,7 +28,7 @@ OBJ		= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	$(COMPILE) -c $< -o $@
 

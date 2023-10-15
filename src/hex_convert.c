@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include <ft_printf.h>
 
 int	hex_convert(unsigned long int arg, char typef)
 {
